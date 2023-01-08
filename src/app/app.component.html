@@ -1,0 +1,40 @@
+
+
+<div cdkDropListGroup>
+    <h1>drag</h1>
+    <div cdkDropList
+    id="drag"
+    [cdkDropListConnectedTo]="dropHere"
+        (cdkDropListDropped)="onDrop($event)"
+        [cdkDropListData]="dragThis">
+        <div cdkDrag class="drag-item"
+            *ngFor="let drag of dragThis">
+            {{drag}}
+        </div>
+    </div>
+
+    <h1> drop</h1>
+    <div cdkDropList
+    id="drop"
+    [cdkDropListConnectedTo]="dragThis"
+    (cdkDropListDropped)="onDrop($event)"
+        [cdkDropListData]="dropHere">
+        <div cdkDrag class= "drag-item"
+            *ngFor="let drag of dropHere">
+             {{drag}}
+        </div>
+    </div>
+</div>
+
+
+    
+    
+
+    
+
+
+
+
+
+<router-outlet></router-outlet>
+
